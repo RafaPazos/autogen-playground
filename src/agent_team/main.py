@@ -30,38 +30,13 @@ model_client = AzureOpenAIChatCompletionClient(
 )
 
 # Create the primary agent.
-primary_agent = AssistantAgent(
-    "primary",
-    model_client=model_client,
-    system_message="You are a helpful AI assistant.",
-)
 
-## Create the jokes agent, this is optional and shown how the interaction between agents may provide quite unexpected results
-##jokes_agent = AssistantAgent(
-##    "jokes",
-##    model_client=model_client,
-##    system_message="You are a funny AI assistant that don't like poems but makes funny comments on them.",
-##)
 
 # Create the critic agent.
-critic_agent = AssistantAgent(
-    "critic",
-    model_client=model_client,
-    system_message="Provide constructive feedback. Respond with 'APPROVE' to when your feedbacks are addressed.",
-)
 
 # Define a termination condition that stops the task if the critic approves.
-text_termination = TextMentionTermination("APPROVE")
 
 # Create a team with the primary and critic agents.
-team = RoundRobinGroupChat([primary_agent, critic_agent], termination_condition=text_termination)
-
-## adding the jokes agent makes the team more fun and interesting, you don't even know how the whole thing will end up.
-## team = RoundRobinGroupChat([primary_agent, jokes_agent,critic_agent], termination_condition=text_termination)
-
-async def main() -> None:
-    await team.reset()  # Reset the team for a new task.
-    await Console(team.run_stream(task="Write a short poem about the fall season."))  # Stream the messages to the console.
 
 # NOTE: if running this inside a Python script you'll need to use asyncio.run(main()).
 asyncio.run(main())

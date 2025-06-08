@@ -1,0 +1,10 @@
+autogen==0.9
+autogen_core
+autogen-agentchat
+autogen-ext[openai,azure]
+autogen-ext[azure]
+requests
+pytest
+pydantic
+opentelemetry-sdk
+aiohttp

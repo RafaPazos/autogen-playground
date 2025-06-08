@@ -1,0 +1,3 @@
+# Exercise 1: Basics
+
+This exercise introduces the fundamental concepts and serves as a starting point for understanding the basics of the code. It is based on the first part of the autogen [documentation](https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/tutorial/models.html), providing a foundational overview for beginners. The goal is to familiarize users with essential programming constructs and principles such as models usagte, the first agent and how to define a function.

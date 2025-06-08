@@ -43,8 +43,19 @@ and here how to configure your open telemetry [provider](https://microsoft.githu
 
 To run the application, execute the following command:
 
+Exercise number 1:
 ```
-python src/main.py
+python src/agent_chat_quick/main.py
+```
+
+Exercise number 2:
+```
+python src/agent_chat_tutorial/main.py
+```
+
+Exercise number 3:
+```
+python src/agent_team/main.py
 ```
 
 ## Contributing
